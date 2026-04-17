@@ -10,16 +10,14 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-
 public class ActorServicio {
-
     private final ActorRepository repository;
 
     public List<Actor> obtenerTodas(){
-        return  repository .listarActores();
+        return repository.findAll();
     }
 
     public Actor guardar(Actor actor){
-        return  repository .addActor(actor);
+        return repository.save(actor);
     }
 }

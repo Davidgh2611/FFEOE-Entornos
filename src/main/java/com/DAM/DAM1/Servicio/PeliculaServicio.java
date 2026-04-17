@@ -10,16 +10,15 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-
 public class PeliculaServicio {
 
     private final PeliculaRepository repository;
 
-    public List<Pelicula> obtenerTodas(){
-        return  repository .listarPeliculas();
+    public List<Pelicula> obtenerTodas() {
+        return repository.findAll();
     }
 
-    public Pelicula guardar(Pelicula pelicula){
-        return  repository .addPelicula(pelicula);
+    public Pelicula guardar(Pelicula pelicula) {
+        return repository.save(pelicula);
     }
 }

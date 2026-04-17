@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/peliculas")
 @AllArgsConstructor
-
 public class PeliculaController {
 
     private final PeliculaServicio servicio;

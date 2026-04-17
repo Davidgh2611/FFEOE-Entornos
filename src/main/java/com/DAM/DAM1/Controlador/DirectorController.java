@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/directores")
 @AllArgsConstructor
-
 public class DirectorController {
 
     private final DirectorServicio servicio;

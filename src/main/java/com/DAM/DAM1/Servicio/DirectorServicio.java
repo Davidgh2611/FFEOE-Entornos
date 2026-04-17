@@ -10,16 +10,15 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-
 public class DirectorServicio {
 
     private final DirectorRepository repository;
 
-    public List<Director> obtenerTodas(){
-        return  repository .listarDirectores();
+    public List<Director> obtenerTodas() {
+        return repository.findAll();
     }
 
-    public Director guardar(Director director){
-        return  repository .addDirector(director);
+    public Director guardar(Director director) {
+        return repository.save(director);
     }
 }

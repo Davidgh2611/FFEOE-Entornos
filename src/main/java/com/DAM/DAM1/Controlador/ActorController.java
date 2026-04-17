@@ -10,7 +10,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/actores")
 @AllArgsConstructor
-
 public class ActorController {
 
     private final ActorServicio servicio;
