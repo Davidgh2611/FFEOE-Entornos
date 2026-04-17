@@ -1,0 +1,28 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-jpa
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cine_db
+    ports:
+      - "3309:3306"  # Esto permite que Java conecte por el 3309
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-jpa
+    restart: always
+    environment:
+      PMA_HOST: mysql    # Usamos el nombre del servicio, Docker lo resuelve solo
+      PMA_PORT: 3306     # Puerto INTERNO de la red de Docker
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8090:80"
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:
