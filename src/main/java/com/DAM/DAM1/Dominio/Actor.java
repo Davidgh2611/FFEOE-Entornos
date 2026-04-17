@@ -8,9 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Pelicula {
+public class Actor {
     private Long id;
     private String titulo;
-    private String genero;
-    private int anio;
+    private String nacionalidad;
 }
